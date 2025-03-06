@@ -93,9 +93,6 @@ cd ProjetoAPI</code></pre>
     <li><strong>DELETE</strong> /usuarios/{id} 🗑️ - Deletar um usuário.</li>
 </ul>
 
-<h2>Contribuição 🤝</h2>
-
-<p>Se você deseja contribuir para o projeto, faça um fork, crie uma nova branch e envie um pull request com as suas melhorias.</p>
 
 </body>
 </html>
