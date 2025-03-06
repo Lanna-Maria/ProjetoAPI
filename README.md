@@ -1,68 +1,101 @@
-# ProjetoAPI
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Usuário com Laravel e Guzzle</title>
+</head>
+<body>
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1>CRUD de Usuário com Laravel e Guzzle 🚀</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p>Este projeto implementa um CRUD (Create, Read, Update, Delete) para gerenciamento de usuários, utilizando o <strong>Laravel</strong> e a biblioteca <strong>Guzzle</strong>. O sistema salva, lista, atualiza e deleta os dados de usuários em um banco de dados local, utilizando o <strong>JSON Server API</strong> como serviço para simulação de uma API RESTful. Este trabalho é parte da disciplina de <strong>Tópicos Especiais em Desenvolvimento Web</strong>.</p>
 
-## About Laravel
+<h2>Funcionalidades 📝</h2>
+<ul>
+    <li><strong>Nome</strong> 👤</li>
+    <li><strong>Data de Nascimento</strong> 🎂</li>
+    <li><strong>Email</strong> 📧</li>
+    <li><strong>CPF</strong> 🆔</li>
+    <li><strong>Telefone</strong> 📞</li>
+    <li><strong>Endereço</strong> 🏠 (inclui os campos: rua, cep, bairro, número, cidade, estado)</li>
+</ul>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p>O sistema permite as seguintes operações:</p>
+<ul>
+    <li><strong>Criar</strong> ➕: Adicionar um novo usuário.</li>
+    <li><strong>Listar</strong> 📜: Visualizar todos os usuários cadastrados.</li>
+    <li><strong>Atualizar</strong> ✏️: Alterar as informações de um usuário existente.</li>
+    <li><strong>Deletar</strong> 🗑️: Remover um usuário do banco de dados.</li>
+</ul>
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h2>Tecnologias Utilizadas ⚙️</h2>
+<ul>
+    <li><strong>Laravel</strong>: Framework PHP para desenvolvimento de aplicações web.</li>
+    <li><strong>Guzzle</strong>: Biblioteca PHP para fazer requisições HTTP (utilizada para comunicar com o JSON Server).</li>
+    <li><strong>JSON Server API</strong>: Serviço que simula uma API RESTful para salvar os dados localmente.</li>
+</ul>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<h2>Requisitos 🛠️</h2>
+<ul>
+    <li><strong>PHP</strong> 8.x ou superior</li>
+    <li><strong>Laravel</strong> 8.x ou superior</li>
+    <li><strong>Node.js</strong> (para rodar o JSON Server)</li>
+</ul>
 
-## Learning Laravel
+<h2>Instalação ⚡</h2>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<h3>1. Clonar o Repositório</h3>
+<p>Clone este repositório para sua máquina local:</p>
+<pre><code>git clone https://github.com/Lanna-Maria/ProjetoAPI.git
+cd ProjetoAPI</code></pre>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<h3>2. Instalar Dependências do Laravel</h3>
+<p>Instale as dependências do Laravel utilizando o Composer:</p>
+<pre><code>composer install</code></pre>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h3>3. Instalar JSON Server</h3>
+<p>Instale o JSON Server globalmente utilizando o npm:</p>
+<pre><code>npm install -g json-server</code></pre>
 
-## Laravel Sponsors
+<h3>4. Configurar o JSON Server</h3>
+<p>Crie um arquivo <code>db.json</code> na raiz do projeto com a estrutura inicial dos dados (exemplo):</p>
+<pre><code>{
+  "usuarios": []
+}</code></pre>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<p>Em seguida, inicie o JSON Server para simular a API RESTful:</p>
+<pre><code>json-server --watch db.json --port 3000</code></pre>
 
-### Premium Partners
+<h3>5. Configurar o Laravel</h3>
+<p>Copie o arquivo <code>.env.example</code> para <code>.env</code> e configure a conexão com o banco de dados de sua escolha (se necessário). Não é necessário configurar banco de dados se o JSON Server for utilizado como serviço.</p>
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[WebReinvent](https://webreinvent.com/)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
--   **[Jump24](https://jump24.co.uk)**
--   **[Redberry](https://redberry.international/laravel/)**
--   **[Active Logic](https://activelogic.com)**
--   **[byte5](https://byte5.de)**
--   **[OP.GG](https://op.gg)**
+<h3>6. Instalar Guzzle</h3>
+<p>Instale a biblioteca Guzzle para realizar as requisições HTTP:</p>
+<pre><code>composer require guzzlehttp/guzzle</code></pre>
 
-## Contributing
+<h3>7. Rodar as Migrações (Se necessário)</h3>
+<p>Caso você opte por usar um banco de dados real, rode as migrações:</p>
+<pre><code>php artisan migrate</code></pre>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<h3>8. Iniciar o Servidor do Laravel</h3>
+<p>Inicie o servidor de desenvolvimento do Laravel:</p>
+<pre><code>php artisan serve</code></pre>
+<p>Agora, a aplicação estará rodando em <code>http://localhost:8000</code>.</p>
 
-## Code of Conduct
+<h2>Testando a Aplicação 🧪</h2>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<p>Com o Laravel rodando em <code>http://localhost:8000</code> e o JSON Server simulando a API em <code>http://localhost:3000</code>, você pode testar o CRUD via Postman ou navegador. As rotas disponíveis para o CRUD são:</p>
+<ul>
+    <li><strong>POST</strong> /usuarios ➕ - Criar um novo usuário.</li>
+    <li><strong>GET</strong> /usuarios 📜 - Listar todos os usuários.</li>
+    <li><strong>PUT</strong> /usuarios/{id} ✏️ - Atualizar um usuário existente.</li>
+    <li><strong>DELETE</strong> /usuarios/{id} 🗑️ - Deletar um usuário.</li>
+</ul>
 
-## Security Vulnerabilities
+<h2>Contribuição 🤝</h2>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<p>Se você deseja contribuir para o projeto, faça um fork, crie uma nova branch e envie um pull request com as suas melhorias.</p>
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+</body>
+</html>
